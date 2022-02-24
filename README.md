@@ -98,7 +98,7 @@ flask-corona-info
 
 ## Links
 
-Demo of Project: [coronad.pythonanywhere.com](https://coronad.pythonanywhere.com/)
+Demo of Project: [corona-dori.herokuapp.com](https://corona-dori.herokuapp.com/)
 
 Download Source Code: [Click Here](https://github.com/dori-dev/flask-corona-info/archive/refs/heads/master.zip)
 
