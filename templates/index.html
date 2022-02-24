@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>آخرین آمار کرونا ویروس</title>
+    <!-- css -->
+    <link rel="stylesheet" href="static/style.css" />
+    <!-- icon -->
+    <link rel="icon" href="static/img/favicon.ico" />
+  </head>
+  <body>
+    <h1 style="display: none">
+      آخرین اخبار و آمار رسمی از ویروس کرونا در ایران و جهان
+    </h1>
+
+    <!-- Site Title -->
+    <p id="site-desc">
+      <img
+        class="live-logo"
+        src="static/img/live.png"
+        alt="آمار لحظه ای از ویروس کرونا">
+      <b>آمار لحظه ای از ویروس کرونا</b>
+    </p>
+
+    <!-- Site Logo -->
+    <img
+      class="logo"
+      src="static/img/logo.png"
+      alt="آخرین اخبار و آمار رسمی از ویروس کرونا در ایران و جهان">
+    <br>
+    <br>
+
+    <!-- Information -->
+    <div class="info-item">
+      <h2 class="info-title">
+        مبتلایان تا امروز <b style="display: none">کرونا</b>
+      </h2>
+      <p id="cases">{{ cases }}</p>
+    </div>
+    <div class="info-item">
+      <h2 class="info-title">
+        مجموع جانباختگان <b style="display: none">کرونا</b>
+      </h2>
+      <p id="death">{{ deaths }}</p>
+    </div>
+    <div class="info-item">
+      <h2 class="info-title">
+        مجموع بهبود یافتگان <b style="display: none">کرونا</b>
+      </h2>
+      <p id="recover">{{ recovered }}</p>
+    </div>
+    <div class="info-item">
+      <h2 class="info-title">
+        مبتلایان فعلی <b style="display: none">کرونا</b>
+      </h2>
+      <p id="active">{{ active_cases }}</p>
+    </div>
+    <!-- Information -->
+
+    <!-- Plot -->
+    <a target="_blank" href="static/DB/plot.png">
+      <img
+        class="plot"
+        src="static/DB/plot.png"
+        alt="نمودار آمار رسمی مجموع مبتلایان کشورهای درگیر با ویروس کرونا">
+    </a>
+
+    <!-- Info Table -->
+    <h2 class="table-title">جدول جدیدترین اطلاعات کشورهای درگیر با کرونا</h2>
+    <table class="corona-info">
+      <tr>
+        <th>جمعیت</th>
+        <th>جانباختگان <i>جدید</i></th>
+        <th>جانباختگان</th>
+        <th>بهبودیافتگان <i>جدید</i></th>
+        <th>بهبود یافتگان</th>
+        <th>مبتلایان <i>جدید</i></th>
+        <th>مبتلایان</th>
+        <th>کشور ها</th>
+        <th></th>
+      </tr>
+
+      {% for i in range(0, 198) %}
+      <tr>
+        <th>{{ population[i] }}</th>
+        {% if not new_deaths[i] %}
+        <th>{{ new_deaths[i] }}</th>
+        {% else %} {% if i == 0 %}
+        <th class="world-danger">{{ new_deaths[i] }}</th>
+        {% else %}
+        <th class="danger">{{ new_deaths[i] }}</th>
+        {% endif %} {% endif %}
+        <th>{{ total_deaths[i] }}</th>
+        {% if not new_recovered[i] %}
+        <th>{{ new_recovered[i] }}</th>
+        {% else %} {% if i == 0%}
+        <th class="world-success">{{ new_recovered[i] }}</th>
+        {% else %}
+        <th class="success">{{ new_recovered[i] }}</th>
+        {% endif %} {% endif %}
+        <th>{{ total_recovered[i] }}</th>
+        {% if not new_cases[i] %}
+        <th>{{ new_cases[i] }}</th>
+        {% else %} {% if i == 0%}
+        <th class="world-warning">{{ new_cases[i] }}</th>
+        {% else %}
+        <th class="warning">{{ new_cases[i] }}</th>
+        {% endif %} {% endif %}
+        <th>{{ total_cases[i] }}</th>
+        <th>{{ country[i] }}</th>
+        {% if i == 0 %}
+        <th>🌎</th>
+        {% else %}
+        <th>{{ i }}</th>
+        {% endif %}
+      </tr>
+      {% endfor %}
+    </table>
+    <!-- Info Table -->
+
+    <!-- Footer -->
+    <br>
+    <hr style="color: #aaa8a8" />
+    <div class="footer-basic">
+      <footer>
+        <p class="copyright">
+          <a href="https://wa.me/989013128010">محمد دری</a> - 2022
+        </p>
+        <p class="copyright">!کپی از مطالب کاملا آزاد است</p>
+        <p class="copyright">تلفن: <a href="tel:09013128010">09013128010</a></p>
+        <p class="copyright">
+          <a href="mailto:mr.dori.dev@gmail.com">mr.dori.dev@gmail.com</a>
+          :ایمیل
+        </p>
+        <p class="copyright">
+          <a href="https://github.com/dori-dev">https://github.com/dori-dev</a>
+          :گیت هاب
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>
