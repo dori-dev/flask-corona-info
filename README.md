@@ -3,7 +3,6 @@
 Live Corona statistics and information site with flask.
 
 #
-
 ## Tools
 
 - Flask
