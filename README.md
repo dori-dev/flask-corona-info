@@ -95,7 +95,6 @@ flask-corona-info
 ```
 
 #
-
 ## Links
 
 Demo of Project: [corona-dori.herokuapp.com](https://corona-dori.herokuapp.com/)
