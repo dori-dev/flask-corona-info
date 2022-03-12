@@ -99,4 +99,4 @@ Demo of Project: [corona-dori.herokuapp.com](https://corona-dori.herokuapp.com/)
 
 Download Source Code: [Click Here](https://github.com/dori-dev/flask-corona-info/archive/refs/heads/master.zip)
 
-My Github Acount: [Click Here](https://github.com/dori-dev/)
+My Github Account: [Click Here](https://github.com/dori-dev/)
