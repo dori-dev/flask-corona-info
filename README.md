@@ -1,6 +1,6 @@
 # Flask Live Corona Info
 
-Live Corona statistics and information site with flask.
+Live Corona statistics and information site with flask and scrapy.
 
 #
 ## Tools
